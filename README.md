@@ -1,9 +1,16 @@
+<p align="center">
+  <a href="https://nextburger.now.sh" target="_blank">
+    <img src="./nextburger.svg" height="55px" alt="vercel badge">
+  </a>
+  <sub>&trade;</sub>
+</p>
+
 <h1 align="center">
-  nextburger 🍔
+  NextBurger
 </h1>
 
 <p align="center">
-  <a href="https://vercel.com">
+  <a href="https://vercel.com/dashboard/fues/projects" target="_blank">
     <img src="https://assets.vercel.com/image/upload/front/favicon/round-2/144x144.png" height="24px" alt="vercel badge">
   </a>
 </p>

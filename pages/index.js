@@ -12,7 +12,7 @@ import SideNavigation from '../src/SideNavigation';
 import FuesBrand from '../src/FuesBrand';
 
 export default function Index() {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
   const [isDark, setIsDark] = useState(false);
   const handleSetTheme = () => {
     setIsDark(!isDark);
@@ -39,8 +39,8 @@ export default function Index() {
     textPaper: {
       padding: '4rem 2rem',
       display: 'block',
-      margin: isCollapsed? '2rem 10%': '2rem 15%',
-      width: '65vw',
+      margin: isCollapsed? '2rem auto 2rem 12.5%': '2rem auto 2rem 18%',
+      maxWidth: isCollapsed? '80vw': '75vw',
       boxShadow: 'rgba(17, 0, 102, 0.16) 0px 16px 80px',
       transition: 'all 0.22s ease-in-out',
     },
@@ -87,11 +87,17 @@ export default function Index() {
     <Grid container className={classes.root} style={{ margin:0 }}>
       <SideNavigation isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} setIsDark={handleSetTheme} />
       <Grid item sm={12} md={12} className={classes.contentContainer}>
-        <HeroBanner title="Home page" path="/" />
+        <HeroBanner title="Home" path="/" />
         <Paper className={classes.textPaper}>
           <Box m={0} className={classes.heroBox}>
-            <Typography variant="h4" component="h1" gutterBottom id="brandName">
+            <Typography variant="h4" component="h1" align="center" id="brandName" gutterBottom>
               NextBurger 🍔
+            </Typography
+            ><Typography variant="h5" component="h1" align="center" color="textSecondary" gutterBottom>
+              Next.js UI Starter Kit: Build ideas faster with burger&trade;
+            </Typography>
+            <Typography variant="h5" component="h1" gutterBottom>
+              Getting Started
             </Typography>
             <Typography variant="body1" component="p" color="secondary" gutterBottom>
               A NextJS + MaterialUI boilerplate equipped with a custom CLI for page &amp; component creation, modification, and deletion. Deploy a front-end server-side rendered(SSR) application built and designed to be highly reusable, scalable, and tolerant in cloud environments. Visit nextburger.io for more information and steps on how to install.

@@ -13,7 +13,7 @@
     "react-dom": "latest"
   },
   "scripts": {
-    "dev": "next",
+    "dev": "next -p 4200",
     "build": "next build",
     "start": "next start",
     "post-update": "echo \"nextburger preview only, need an update\" && yarn upgrade --latest"

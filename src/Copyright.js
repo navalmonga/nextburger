@@ -14,7 +14,8 @@ export default function Copyright() {
     <Typography variant="body1" color="textSecondary" align="center">
       {/* {'Privacy Policy'}<br/>
       {'Terms and Conditions'}<br/> */}
-      {'© ' + new Date().getFullYear() + '. '}⚡️ Powered by Fues.&trade;&nbsp;<br/>
+      ⚡️&nbsp;
+      {'© 2018 - ' + new Date().getFullYear() + ' Fues® Pty. Ltd.'}<br />
     </Typography>
   );
 }
