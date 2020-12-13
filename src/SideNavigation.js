@@ -7,8 +7,7 @@ import Box from '@material-ui/core/Box';
 import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
 import Link from '../src/Link';
-import { FingerprintSharp, FiberSmartRecordSharp, FirstPageSharp, LastPageSharp, ShareSharp, ExposureNeg1Sharp, ExposurePlus1Sharp, ExposureZeroRounded } from '@material-ui/icons';
-
+import { FingerprintSharp, FiberSmartRecordSharp, ArrowForward, ExposureNeg1Sharp, ExposurePlus1Sharp, ExposureZeroRounded } from '@material-ui/icons';
 
 const burgerIcon = () => (
   <Tooltip title="NextBurger 🍔 ◦ Fues® US">
@@ -39,6 +38,7 @@ export default function SideNavigation({isCollapsed, setIsCollapsed, isDark, set
       borderRight: '1px solid rgba(77,79,83,0.25)',
       overflowY: 'hidden',
       padding: isCollapsed? '0': '0 24px 0 0',
+      transition: 'all 0.22s linear'
     },
     sideControl: {
       display: 'flex',
@@ -55,24 +55,23 @@ export default function SideNavigation({isCollapsed, setIsCollapsed, isDark, set
       color: '#4d4f53',
       marginLeft: '32px',
       fontWeight: isCollapsed? 500: 300,
-      transition: 'all 0.22s !important',
+      transition: 'all 0.22s linear',
       fontFamily: 'IBM Plex Sans Condensed, sans-serif',
     },
     sideLinks: {
       display: 'flex',
       flexDirection: 'column',
-      marginLeft: '3px',
+      marginLeft: '8px',
     },
     sideNavLink: {
       marginLeft: '0 !important',
       borderRadius: '3px',
-      padding: '10px 20px',
-      margin: '8px 0',
+      padding: '8px 1rem',
+      margin: '1rem 0',
       display: 'flex',  
       justifyContent: 'flex-start',
       alignItems: 'center',
-      transition: 'all 0.22s !important',
-      paddingRight: '2rem',
+      transition: 'all 0.22s linear',
       '&:hover': {
         textDecoration: 'none',
       },
@@ -80,12 +79,16 @@ export default function SideNavigation({isCollapsed, setIsCollapsed, isDark, set
         textDecoration: 'none',
       }
     },
-    ldIcon: {
+    togIcon: {
+      fontSize: 22,
       color: isDarkTheme? '#fafafa': '#4d4f53',
+    },
+    expandArrowIcon: {
+      transform: 'rotate(-180deg)',
     },
     navLinkIcon: {
       transition: 'all 0.22s !important',
-      fontSize: isCollapsed? 30: 24,
+      fontSize: isCollapsed? 28: 24,
       color: "#4d4f53",
     }
   }));
@@ -95,18 +98,11 @@ export default function SideNavigation({isCollapsed, setIsCollapsed, isDark, set
       <Box m={0} className={classes.navBox}>
         <Container className={classes.sideControl}>
           { burgerIcon() }
-          {isCollapsed? (
-            <IconButton color="primary" onClick={() => { setIsCollapsed(!isCollapsed) }} aria-label="collapse" >
-              <LastPageSharp className={classes.ldIcon}/>
-            </IconButton>
-            ):(
-              <IconButton color="primary" onClick={() => { setIsCollapsed(!isCollapsed) }} aria-label="open" >
-                <FirstPageSharp className={classes.ldIcon}/>
-              </IconButton>
-            )
-          }
+          <IconButton className={classes.togIcon} onClick={() => { setIsCollapsed(!isCollapsed) }} aria-label="collapse" >
+            <ArrowForward className={!isCollapsed? classes.expandArrowIcon: ''} style={{ transition: 'all 0.22s linear' }}/>
+          </IconButton>
         </Container>
-        {!isCollapsed ? (
+        {/* {!isCollapsed ? (
           <Typography variant="overline" component="h1" className={classes.brand}>
             Nextburger
           </Typography>
@@ -114,7 +110,7 @@ export default function SideNavigation({isCollapsed, setIsCollapsed, isDark, set
           <Typography variant="overline" component="h1" className={classes.brand}>
             N
           </Typography>
-        )}
+        )} */}
         <Container disableGutters className={classes.sideLinks}>
           <Tooltip title="Home">
             <Link href="/" color="inherit" activeClassName="active" className={classes.sideNavLink}>

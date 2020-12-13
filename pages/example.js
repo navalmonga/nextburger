@@ -40,8 +40,9 @@ export default function Example() {
       padding: '4rem 2rem',
       display: 'block',
       margin: isCollapsed? '2rem auto 2rem 12.5%': '2rem auto 2rem 18%',
-      maxWidth: isCollapsed? '80vw': '75vw',
+      width: isCollapsed? '80vw': '75vw',
       boxShadow: 'rgba(17, 0, 102, 0.16) 0px 16px 80px',
+      transition: 'all 0.22s linear',
     },
     heroBox: {
       paddingLeft: '1rem',
