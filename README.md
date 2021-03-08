@@ -1,12 +1,5 @@
-<p align="center">
-  <a href="https://nextburger.now.sh" target="_blank">
-    <img src="./nextburger.svg" height="55px" alt="vercel badge">
-  </a>
-  <sub>&trade;</sub>
-</p>
-
 <h1 align="center">
-  NextBurger
+  nextburger
 </h1>
 
 <p align="center">
