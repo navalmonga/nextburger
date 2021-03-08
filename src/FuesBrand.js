@@ -6,17 +6,16 @@ const useStyles = makeStyles((theme) => ({
   fuesBrand: {
     zIndex: 99,
     position: 'fixed',
-    right: '32px',
-    top: '2rem',
+    left: theme.spacing(2),
+    bottom: '2rem',
     display: 'flex',
     flexGrow: 1,
     color: '#4d4f53',
     textTransform: 'uppercase',
+    fontFamily: 'IBM Plex Mono, monospace',
     fontWeight: 700,
-    fontStyle: 'italic',
     fontSize: 16,
-    fontFamily: 'IBM Plex Sans Condensed, sans-serif',
-    transition: 'all 0.22s ease-in-out',
+    transition: 'all 0.22s linear',
     '&:hover': {
       textDecoration: 'none',
       fontSize: 18,
@@ -31,7 +30,7 @@ export default function Copyright() {
   const classes=useStyles();
   return (
     <Link href="https://www.fues.us" target="_blank" className={classes.fuesBrand}>
-      fues&reg;&nbsp;<span>us</span>
+      fues<span>pro</span>&trade;
     </Link>
   );
 }
